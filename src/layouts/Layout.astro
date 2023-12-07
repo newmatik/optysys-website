@@ -1,0 +1,40 @@
+---
+import { Header } from "../components/Header.tsx";
+import { Footer } from "../components/Footer.tsx";
+import "cal-sans";
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="description"
+			content="AI-powered optical inspection platform."
+		/>
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/newmatik-insignia.png" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta
+			property="og:description"
+			content="AI-powered optical inspection platform."
+		/>
+		<meta
+			property="og:image"
+			content="https://github.com/newmatik/optysysapp.info/assets/19825455/38991a5d-9add-48b2-a947-73d30c00f4c3"
+		/>
+		<meta property="og:url" content="https://optysysapp.info" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header client:visible />
+		<slot />
+		<Footer />
+	</body>
+</html>
